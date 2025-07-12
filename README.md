@@ -1,6 +1,6 @@
 <!-- BEGIN_TF_DOCS -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yashodhan271/terraform-aws-self-healing-infrastructure/main/logo.svg" alt="Self-Healing Infrastructure" width="200"/>
+ 
 </p>
 
 # Self-Healing Infrastructure Terraform Module
@@ -26,7 +26,7 @@ A Terraform module that deploys cloud resources with built-in self-healing capab
 ```hcl
 # From Terraform Registry (recommended)
 module "self_healing_ec2" {
-  source  = "yashodhan271/aws-self-healing-infrastructure/aws"
+  source  = "aws-self-healing-infrastructure/aws"
   version = "1.0.0"
 
   instance_name        = "web-server"
@@ -47,7 +47,7 @@ module "self_healing_ec2" {
 
 # From GitHub
 module "self_healing_ec2" {
-  source = "github.com/yashodhan271/terraform-aws-self-healing-infrastructure/modules/self-healing-ec2"
+  source = "github.com/hayatcode/terraform-aws-self-healing-infrastructure/modules/self-healing-ec2"
 
   # Module variables...
 }
@@ -80,7 +80,7 @@ Most infrastructure management solutions require external monitoring tools, manu
 ```hcl
 # From Terraform Registry (recommended)
 module "self_healing_infrastructure" {
-  source  = "yashodhan271/aws-self-healing-infrastructure/aws"
+  source  = "hayatcode/aws-self-healing-infrastructure/aws"
   version = "1.0.0"
 
   region      = "us-east-1"
@@ -97,7 +97,7 @@ module "self_healing_infrastructure" {
 
 # From GitHub
 module "self_healing_infrastructure" {
-  source = "github.com/yashodhan271/terraform-aws-self-healing-infrastructure"
+  source = "github.com/hayatcode/terraform-aws-self-healing-infrastructure"
 
   # Module variables...
 }
@@ -108,7 +108,7 @@ module "self_healing_infrastructure" {
 ```hcl
 # From Terraform Registry (recommended)
 module "web_servers" {
-  source  = "yashodhan271/aws-self-healing-infrastructure/aws"
+  source  = "hayatcode/aws-self-healing-infrastructure/aws"
   version = "1.0.0"
 
   name_prefix            = "web"
@@ -130,7 +130,7 @@ module "web_servers" {
 
 # From GitHub
 module "web_servers" {
-  source = "github.com/yashodhan271/terraform-aws-self-healing-infrastructure/modules/self-healing-ec2"
+  source = "github.com/hayatcode/terraform-aws-self-healing-infrastructure/modules/self-healing-ec2"
 
   # Module variables...
 }
@@ -141,7 +141,7 @@ module "web_servers" {
 ```hcl
 # From Terraform Registry (recommended)
 module "database" {
-  source  = "yashodhan271/aws-self-healing-infrastructure/aws"
+  source  = "hayatcode/aws-self-healing-infrastructure/aws"
   version = "1.0.0"
 
   name_prefix         = "db"
@@ -169,7 +169,7 @@ module "database" {
 
 # From GitHub
 module "database" {
-  source = "github.com/yashodhan271/terraform-aws-self-healing-infrastructure/modules/self-healing-rds"
+  source = "github.com/hayatcode/terraform-aws-self-healing-infrastructure/modules/self-healing-rds"
 
   # Module variables...
 }
@@ -184,7 +184,7 @@ You can customize the healing behavior for different environments:
 ```hcl
 # Development environment: more lenient thresholds
 module "dev_database" {
-  source = "github.com/yashodhan271/terraform-aws-self-healing-infrastructure/modules/self-healing-rds"
+  source = "github.com/hayatcode1/terraform-aws-self-healing-infrastructure/modules/self-healing-rds"
   
   # Basic configuration...
   
@@ -198,7 +198,7 @@ module "dev_database" {
 
 # Production environment: stricter thresholds
 module "prod_database" {
-  source = "github.com/yashodhan271/terraform-aws-self-healing-infrastructure/modules/self-healing-rds"
+  source = "github.com/hayatcode/terraform-aws-self-healing-infrastructure/modules/self-healing-rds"
   
   # Basic configuration...
   
